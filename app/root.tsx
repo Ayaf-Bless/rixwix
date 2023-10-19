@@ -3,6 +3,7 @@ import { KCDShop } from './kcdshop.tsx'
 import { LinksFunction } from '@remix-run/node'
 import favaiconUrl from './assets/favicon.svg'
 import fontStyleUrl from './styles/font.css'
+import tailwindStyleUrl from './styles/tailwind.css'
 
 // 🐨 export a links function here that adds the favicon
 // 💰 It should have the following properties:
@@ -21,6 +22,10 @@ export const links: LinksFunction = () => {
 			rel: 'stylesheet',
 			href: fontStyleUrl,
 		},
+		{
+			rel: 'stylesheet',
+			href: tailwindStyleUrl,
+		},
 	]
 }
 
@@ -28,11 +33,10 @@ export default function App() {
 	return (
 		<html lang="en">
 			<head>
-				{/* 🐨 Put Remix's <Links /> in here */}
 				<Links />
 			</head>
 			<body>
-				<p>Hello World</p>
+				<p className="p-8 text-xl">Hello World</p>
 				<Scripts />
 				<KCDShop />
 				<LiveReload />
