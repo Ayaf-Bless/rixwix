@@ -1,6 +1,8 @@
-import { Link, LiveReload, Scripts } from '@remix-run/react'
+import { Links, LiveReload, Scripts } from '@remix-run/react'
 import { KCDShop } from './kcdshop.tsx'
 import { LinksFunction } from '@remix-run/node'
+import favaiconUrl from './assets/favicon.svg'
+import fontStyleUrl from './styles/font.css'
 
 // 🐨 export a links function here that adds the favicon
 // 💰 It should have the following properties:
@@ -13,7 +15,11 @@ export const links: LinksFunction = () => {
 		{
 			rel: 'icon',
 			type: 'image/svg+xml',
-			href: '/favicon.svg',
+			href: favaiconUrl,
+		},
+		{
+			rel: 'stylesheet',
+			href: fontStyleUrl,
 		},
 	]
 }
@@ -23,7 +29,7 @@ export default function App() {
 		<html lang="en">
 			<head>
 				{/* 🐨 Put Remix's <Links /> in here */}
-				<Link />
+				<Links />
 			</head>
 			<body>
 				<p>Hello World</p>
