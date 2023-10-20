@@ -4,6 +4,8 @@ import { LinksFunction } from '@remix-run/node'
 import favaiconUrl from './assets/favicon.svg'
 import fontStyleUrl from './styles/font.css'
 import tailwindStyleUrl from './styles/tailwind.css'
+import { cssBundleHref } from '@remix-run/css-bundle'
+// import './styles/global.css'
 
 // 🐨 export a links function here that adds the favicon
 // 💰 It should have the following properties:
@@ -26,7 +28,13 @@ export const links: LinksFunction = () => {
 			rel: 'stylesheet',
 			href: tailwindStyleUrl,
 		},
-	]
+		cssBundleHref
+			? {
+					rel: 'stylesheet',
+					href: cssBundleHref,
+			  }
+			: null,
+	].filter(Boolean)
 }
 
 export default function App() {
