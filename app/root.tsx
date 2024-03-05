@@ -1,10 +1,10 @@
+import { cssBundleHref } from '@remix-run/css-bundle'
+import { type LinksFunction } from '@remix-run/node'
 import { Links, LiveReload, Scripts } from '@remix-run/react'
-import { KCDShop } from './kcdshop.tsx'
-import { LinksFunction } from '@remix-run/node'
 import favaiconUrl from './assets/favicon.svg'
+import { KCDShop } from './kcdshop.tsx'
 import fontStyleUrl from './styles/font.css'
 import tailwindStyleUrl from './styles/tailwind.css'
-import { cssBundleHref } from '@remix-run/css-bundle'
 // import './styles/global.css'
 
 // 🐨 export a links function here that adds the favicon
